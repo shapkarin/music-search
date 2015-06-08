@@ -1,4 +1,4 @@
-define(['../../lib/jquery-1.8.3', 'underscore', 'backbone',
+define(['jquery', 'underscore', 'backbone',
         'lib/backbone.localStorage'], 
 
        function($, _, Backbone) {
