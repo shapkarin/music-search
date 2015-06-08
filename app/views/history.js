@@ -52,12 +52,10 @@ define(['jquery',
 			},
 
 			searchRemoved: function(search, searches) {
-			
 				this.show(searches.models);
 			},
 
 			show: function(searches) {
-			
 				this.$el.html(_.template(historyTp, {
 					searches: searches 
 				}));		

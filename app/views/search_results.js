@@ -7,12 +7,20 @@ define(['jquery',
 
     var SearchResults = Backbone.View.extend({
 
+      events: {
+        'click .search_result': 'more'
+      },
+
       search: function(search) {
         this.options.model.search(
           search,
           $.proxy(this.resultsLoaded, this),
           $.proxy(this.errorLoadingResults, this)
         );
+      },
+
+      more: function(ev) {
+
       },
 
       resultsLoaded: function(results) {

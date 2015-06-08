@@ -108,6 +108,7 @@
 }
 .history {
   margin-bottom: 20px;
+  margin-right: 8px;
 }
 .history > .search {
   background-color: #f8f8f8;
@@ -192,6 +193,9 @@
 }
 #search_results .search_result .info {
   padding: 8px 10px;
+}
+#search_results .search_result .album-cover {
+  position: relative;
 }
 #search_results .search_result .album-cover > img {
   max-width: 100%;

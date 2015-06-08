@@ -10,7 +10,7 @@
                  style="animation-delay: <%=delay%>;
                          -webkit-animation-delay: <%=delay%>;
                          -moz-animation-delay: <%=delay%>;"
-                    >
+                 data-name="<%= r.get('artist')['name']%> <%= r.get('name') %>"   >
                 <div class='album-cover'>
                     <span class="rank">
                         <%= r.get('@attr')['rank'] %>
