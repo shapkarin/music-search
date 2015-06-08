@@ -2,12 +2,12 @@ define(['jquery',
         'underscore',
        	'backbone',
 
-	'app/models/search_list',
+	'app/collections/search_list',
 	'app/models/track',
 
-	'app/search_bar/search_bar',
-	'app/history/history',
-	'app/search_results/search_results',
+	'app/views/search_bar',
+	'app/views/history',
+	'app/views/search_results',
 	
 	'text!app/templates/layout.tp',
 	'text!app/templates/search_results/artist.tp',

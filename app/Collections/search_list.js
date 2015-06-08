@@ -1,4 +1,4 @@
-define(['jquery', 'underscore', 'backbone', 
+define(['jquery', 'underscore', 'backbone',
         'lib/backbone.localStorage'], 
 
        function($, _, Backbone) {

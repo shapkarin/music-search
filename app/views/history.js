@@ -39,10 +39,10 @@ define(['jquery',
 			},
 
 			removeSearch: function(ev) {
-            var self = this; ev.stopPropagation();
-			self._getSearchEl(ev).fadeOut('325',function(){
-                  self._getSearch(ev).destroy();
-            });
+                var self = this; ev.stopPropagation();
+                self._getSearchEl(ev).fadeOut('325',function(){
+                      self._getSearch(ev).destroy();
+                });
 
 			},
 

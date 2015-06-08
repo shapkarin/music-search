@@ -32,7 +32,7 @@
                             <%= r.get('name') %>
                         </a>
                     <div class='stat'>
-                        Прослушиваний: <%= prettyNumber(r.get('playcount')) %><br>
+                        Воспроизведено: <%= prettyNumber(r.get('playcount')) %><br>
                         Слушателей: <%= prettyNumber(r.get('listeners')) %>
                     </div>
 

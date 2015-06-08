@@ -1,8 +1,8 @@
 <form class="navbar-form navbar-left search_form" role="search">
     <div class="form-group">
-        <input id='query' type='text' name='query'  class="form-control" value='' placeholder="Beatles">
+        <input id='query' type='text' name='query'  class="form-control" value='' placeholder="Артист или стиль">
     </div>
-    <button class='search btn btn-default'>Search <i class="icon-search"></i></button>
+    <button class='search btn btn-default'>Поиск <i class="icon-search"></i></button>
     <div class="radio">
         <label for="artist" class="radio-inline">
             <input id='artist' type='radio' name='service' value='twitter' checked>
