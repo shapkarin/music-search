@@ -28,11 +28,6 @@
                          <%= r.get('name') %>
                     </a><br>
                     <% if (r.get('downloadurl')) {%>
-                    <span>Беслатное прослушивание</span>
-                    <audio controls>
-                        <source src="<%= r.get('downloadurl')%>" type="audio/mpeg">
-                        <a href="<%= r.get('downloadurl')%>">Скачайте музыку</a>.
-                    </audio>
                     <% }%>
                 </div>
             </div>
