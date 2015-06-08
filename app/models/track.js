@@ -34,8 +34,8 @@ define(['jquery',
 				});
 			},
       
-      moreInfo: function(params, success, error) {
-
+      youtube: function(params, success, error) {
+        console.log('youtube')
       }
 		});
 

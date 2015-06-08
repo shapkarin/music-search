@@ -7,7 +7,7 @@ module.exports = function(grunt) {
       compile: {
           options: {
               compress: false,
-              paths: ['stylesheets/stylus/utils', 'stylesheets/stylus/modules']
+              paths: ['stylesheets/stylus/includes']
           },
           files: {
               'stylesheets/css/style.css': 'stylesheets/stylus/style.styl'

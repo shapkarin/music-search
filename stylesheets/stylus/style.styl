@@ -2,120 +2,112 @@ support-for-ie ?= false
 vendor-prefixes ?= webkit moz o official
 
 @import 'nib'
-
-//keyframes
-@keyframes fadeIn
-  0%
-    transform scale(0)
-    opacity 0
-  30%
-    opacity 1
-  100%
-    transform scale(1)
-    opacity 1
+@import "variables"
+@import "keyframes"
 
 .history
   margin-bottom 20px
-  .search
+
+  > .search
     background-color #f8f8f8
     display inline-block
 
-.search
-  > .remove
-    border-left 1px solid darken(#f8f8f8, 10%)
-    cursor pointer
+    > .remove
+      border-left 1px solid darken(#f8f8f8, 8%)
+      padding 10px
 
-  > .remove:hover, > .query:hover
-    background-color darken(#f8f8f8, 10%)
-   > .query
-    cursor pointer
+    > .query
+      padding 10px 14px 10px 10px
 
-.search > .query, .search > .remove 
-  float left
-  padding 10px
-
-.zoom-out
-  width 0
-  height 0
-
-.search_result
-  opacity 0
-  transform scale(0)
-  animation-name fadeIn
-  animation-timing-function linear
-  animation-direction normal
-  animation-fill-mode forwards
-  animation-duration 300ms
-  border 1px solid lightgray
-  border-radius 5px
-  margin-bottom 20px
-  overflow hidden
-  position relative
-
-
-  &:hover .rank
-    opacity 1
-
-  .rank
-    position absolute
-    padding 5px 10px
-    color #fff
-    background-color rgba(0,0,0,0.6)
-    opacity 0
-    transition opacity .2s linear
-    border-top-left-radius 4px
-    border-bottom-right-radius 4px
-
-  .info
-    padding 8px 10px
-
-
-  .album-cover
-    > img
-      max-width 100%
-
-    .audio
-      width 100%
-      position absolute
-      bottom 0
-
-    $cover-width = 150px
-    $cover-margin = 20px
-    @media screen and (max-width 768px)
+    > .query, > .remove
       float left
-      width $cover-width
-      margin-right $cover-margin
-      position static
+      cursor pointer
 
-      > .rank
-        opacity 1
+    > .remove:hover, > .query:hover
+      background-color darken(#f8f8f8, 10%)
+
+
+
+
+#search_results
+  perspective 1000
+
+  .search_result
+    opacity 0
+    animation-name fadeZoomIn
+    animation-timing-function linear
+    animation-direction normal
+    animation-fill-mode forwards
+    animation-duration 300ms
+    border 1px solid lightgray
+    border-radius 5px
+    margin-bottom 20px
+    overflow hidden
+    position relative
+
+    @media screen and (max-width $screen-sm-min)
+      animation-name fadeIn
+
+    .info
+      .stat
+        margin-top 7px
+
+    &:hover .rank
+      opacity 1
+
+    .rank
+      position absolute
+      padding 5px 10px
+      color #fff
+      background-color rgba(0,0,0,0.6)
+      opacity 0
+      transition opacity .2s linear
+      border-top-left-radius 4px
+      border-bottom-right-radius 4px
+
+    .info
+      padding 8px 10px
+
+    .album-cover
+      > img
+        max-width 100%
 
       .audio
-        padding 0 $cover-margin $cover-margin/2 $cover-width+$cover-margin
+        width 100%
+        position absolute
+        bottom 0
 
-      .album-cover
-        position relative
+      @media screen and (max-width $screen-sm-min)
+        float left
+        width $cover-width
+        margin-right $cover-margin
+        position static
 
-$artist-h = 375px
-$tag-h = $artist-h - 40
+        > .rank
+          opacity 1
+
+        .audio
+          padding 0 $cover-margin ($cover-margin / 2) ($cover-width + $cover-margin)
+
+        .album-cover
+          position relative
+
+
 .byArtist .search_result
   height $artist-h
 
-  @media screen and (max-width: 1200px)
-    height $artist-h - 45 !important
+  @media screen and (max-width: $screen-lg-min)
+    height $artist-h - 45px !important
 
 .byTag .search_result
   height $tag-h
 
-  @media screen and (max-width: 1200px)
-    height $tag-h - 45 !important
+  @media screen and (max-width: $screen-lg-min)
+    height $tag-h - 45px !important
 
-@media screen and (max-width 768px)
+@media screen and (max-width $screen-sm-min)
   .byArtist .search_result, .byTag .search_result
     height 150px !important
-
-.stat 
-  margin-top 7px
 
 .radio
   margin-left 10px
