@@ -17,16 +17,13 @@ define(['jquery',
 					success: function(model, response) {
 						var results = response.toptracks || [],
 						    instances = [];
-           // console.log(JSON.stringify(response, undefined, 4) );
             if(results && results.track.length) {
               for(var i=0;i<results.track.length;i++) {
                 var r = results.track[i];
-                //todo: do this in template
                 instances.push( new Track(r) );
               }
            }
 						success(instances);
-            //console.log(JSON.stringify(instances, undefined, 4))
 					},
 					error: function() {
 						error(arguments);
