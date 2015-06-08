@@ -108,11 +108,11 @@
 }
 .history {
   margin-bottom: 20px;
-  margin-right: 8px;
 }
 .history > .search {
   background-color: #f8f8f8;
   display: inline-block;
+  margin-right: 8px;
 }
 .history > .search > .remove {
   border-left: 1px solid #e4e4e4;
