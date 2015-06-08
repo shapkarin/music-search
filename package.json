@@ -1,0 +1,22 @@
+{
+  "name": "Music-searcher",
+  "version": "1.2.0",
+  "description": "Fast way to search top track from last.fm by artist or tag",
+  "author": {
+    "name": "Yury",
+    "email": "yury@shapkarin.me",
+    "url": "http://shapkarin.me"
+  },
+  "homepage": "http://music.shapkarin.me",
+  "engines": {
+    "node": "0.10.35",
+    "npm": "2.1.17"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-stylus": "^0.18.0",
+    "grunt-contrib-watch": "^0.6.1"
+  },
+  "bundleDependencies": [],
+  "private": true
+}
