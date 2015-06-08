@@ -113,6 +113,7 @@
   background-color: #f8f8f8;
   display: inline-block;
   margin-right: 8px;
+  cursor: pointer;
 }
 .history > .search > .remove {
   border-left: 1px solid #e4e4e4;
@@ -124,7 +125,6 @@
 .history > .search > .query,
 .history > .search > .remove {
   float: left;
-  cursor: pointer;
 }
 .history > .search > .remove:hover,
 .history > .search > .query:hover {
