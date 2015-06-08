@@ -9,8 +9,7 @@
             <div class='search_result clearfix'
                  style="animation-delay: <%=delay%>;
                          -webkit-animation-delay: <%=delay%>;
-                         -moz-animation-delay: <%=delay%>;"
-                 data-name="<%= r.get('artist')['name']%> <%= r.get('name') %>"   >
+                         -moz-animation-delay: <%=delay%>;">
                 <div class='album-cover'>
                     <span class="rank">
                         <%= r.get('@attr')['rank'] %>
