@@ -47,7 +47,6 @@ define(['jquery',
       },
 
       searchAdded: function(search, searches) {
-      
         this.show(searches.models);
       },
 
@@ -60,7 +59,6 @@ define(['jquery',
           searches: searches 
         }));    
       },
-
 
       _getSearch: function(ev) {
       

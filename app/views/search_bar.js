@@ -20,13 +20,14 @@ define(['jquery',
       search: function(ev) {
         ev.preventDefault();
         var artistChecked = $('#artist').attr('checked'),
-            query = $('#query').val();
+            query = $('#query').val(),
+            service = artistChecked ? 'artist' : 'tag';
 
         if(query){
 
           this.$el.trigger('search', {
             query: query,
-            service: artistChecked ? 'artist' : 'tag'
+            service: service
           });
 
           } else {
