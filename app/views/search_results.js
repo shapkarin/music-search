@@ -1,9 +1,9 @@
 define(['jquery',
-    'underscore',
+    'jade',
     'backbone'
   ],
 
-  function( $, _, Backbone) {
+  function( $, jade, Backbone) {
 
     var SearchResults = Backbone.View.extend({
 
@@ -24,10 +24,10 @@ define(['jquery',
       },
 
       resultsLoaded: function(results) {
-
-        this.$el.html( _.template(this.options.template, {
-          results: results
-        }));
+        //console.log(results);
+        this.template = jade.compile(this.options.template);
+        var html = this.template({results: results});
+        this.$el.html(html);
       },
 
       errorLoadingResults: function(model, xhr, options) {

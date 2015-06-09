@@ -1,6 +1,6 @@
 define(['jquery',
-        'underscore',
-         'backbone',
+        'jade',
+        'backbone',
 
   'app/collections/search_list',
   'app/models/track',
@@ -9,12 +9,12 @@ define(['jquery',
   'app/views/history',
   'app/views/search_results',
   
-  'text!app/templates/layout.tp',
-  'text!app/templates/search_results/artist.tp',
-  'text!app/templates/search_results/tag.tp'
+  'text!app/templates/layout.jade',
+  'text!app/templates/search_results/artist.jade',
+  'text!app/templates/search_results/tag.jade'
   ],
 
-  function( $, _, Backbone,
+  function( $, jade, Backbone,
 
       SearchList,
       Artist,
@@ -37,7 +37,7 @@ define(['jquery',
 
         initialize: function() {
         
-          this.$el.html(_.template(layoutTp, {}));
+          this.$el.html(jade.compile(layoutTp));
 
           this.searchBar = new SearchBar({
             el: this.$el.find('.search_bar')

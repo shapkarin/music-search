@@ -1,0 +1,18 @@
+form.navbar-form.navbar-left.search_form(role='search')
+  .form-group
+    .input-group
+      input#query.form-control(type='text', name='query', value='', placeholder='Артист или стиль')
+      .input-group-btn
+        button.search.btn.btn-default(style='display:block;')
+          | Поиск
+          i.icon-search
+    .radio
+      label.radio-inline(for='artist')
+        input#artist(type='radio', name='service', value='artist', checked='')
+        i.icon-user
+        |  Артист
+    .radio
+      label(for='tag')
+        input#tag(type='radio', name='service', value='tag')
+        i.icon-hash
+        |  Тег

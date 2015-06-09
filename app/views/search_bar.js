@@ -1,10 +1,10 @@
 define(['jquery',
-        'underscore',
+        'jade',
         'backbone',
-        'text!app/templates/search_bar.tp'
+        'text!app/templates/search_bar.jade'
   ],
 
-  function( $, _, Backbone, searchBarTp) {
+  function( $, jade, Backbone, searchBarTp) {
 
     var SearchBar = Backbone.View.extend({
 
@@ -14,7 +14,9 @@ define(['jquery',
 
       initialize: function() {
 
-        this.$el.html(_.template(searchBarTp, {}));
+        this.$el.html(
+            jade.compile(searchBarTp)
+        );
       },
 
       search: function(ev) {

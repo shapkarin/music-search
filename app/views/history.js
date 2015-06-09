@@ -1,10 +1,10 @@
 define(['jquery',
-        'underscore',
+        'jade',
          'backbone',
-  'text!app/templates/history.tp'
+  'text!app/templates/history.jade'
   ], 
 
-  function( $, _, Backbone, historyTp) {
+  function( $, jade, Backbone, historyTp) {
 
     var History = Backbone.View.extend({
 
@@ -17,9 +17,9 @@ define(['jquery',
 
         this.options.searches.fetch();
       
-        this.$el.html(_.template(historyTp, {
-          searches: this.options.searches.models
-        }));
+        this.template = jade.compile(historyTp);
+        var html = this.template({searches: this.options.searches.models});
+        this.$el.html(html);
 
         this.options.searches.on('add',
           $.proxy(this.searchAdded, this));
@@ -55,9 +55,9 @@ define(['jquery',
       },
 
       show: function(searches) {
-        this.$el.html(_.template(historyTp, {
-          searches: searches 
-        }));    
+        this.template = jade.compile(historyTp);
+        var html = this.template({searches: searches});
+        this.$el.html(html);
       },
 
       _getSearch: function(ev) {
