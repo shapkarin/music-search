@@ -79,8 +79,6 @@ define(['jquery',
 
         performSearch: function(search) {
 
-          Backbone.history.navigate("search/"+search.service+'/'+search.query, true);
-
           var service = search && search.service,
               viewId = service + 'SearchResults',
               view = this[viewId];
