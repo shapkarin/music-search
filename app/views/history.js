@@ -1,7 +1,7 @@
 define(['jquery',
-        'jade',
-         'backbone',
-  'text!app/templates/history.jade'
+        'underscore',
+        'backbone',
+        'text!app/templates/history.tp'
   ], 
 
   function( $, jade, Backbone, historyTp) {
@@ -17,9 +17,9 @@ define(['jquery',
 
         this.options.searches.fetch();
       
-        this.template = jade.compile(historyTp);
-        var html = this.template({searches: this.options.searches.models});
-        this.$el.html(html);
+        this.$el.html(_.template(historyTp, {
+          searches: this.options.searches.models
+        }));
 
         this.options.searches.on('add',
           $.proxy(this.searchAdded, this));
@@ -55,9 +55,9 @@ define(['jquery',
       },
 
       show: function(searches) {
-        this.template = jade.compile(historyTp);
-        var html = this.template({searches: searches});
-        this.$el.html(html);
+        this.$el.html(_.template(historyTp, {
+          searches: searches
+        }));
       },
 
       _getSearch: function(ev) {

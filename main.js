@@ -4,7 +4,6 @@ requirejs.config({
     text: 'lib/require/plugins/text',
     jquery: 'lib/jquery-1.8.3',
     underscore: 'lib/underscore',
-    jade: 'lib/jade',
     backbone: 'lib/backbone'
   }
 
