@@ -7,6 +7,13 @@ requirejs.config({
     jade: 'lib/jade',
     backbone: 'lib/backbone'
   }
+  /*,shim: {
+    'jade': {
+      deps: ['lib/jade_runtime.js'],
+      exports: 'jade'
+    }
+
+  }*/
 
 });
 
