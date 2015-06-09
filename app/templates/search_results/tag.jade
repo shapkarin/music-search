@@ -18,4 +18,8 @@
           else
             img(src='stylesheets/img/no-img.png')
         .info
-          a(href='#{track.get("url")}')= track.get('artist')['name'] + ':' + track.get('name')
+          a(href='#{track.get("url")}')
+            =track.get('artist')['name']
+            | :
+            br
+            =track.get('name')
