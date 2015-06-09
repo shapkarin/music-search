@@ -3,11 +3,11 @@ define(['jquery', 'underscore', 'backbone',
 
        function($, _, Backbone) {
 
-		var SearchList = Backbone.Collection.extend({
+    var SearchList = Backbone.Collection.extend({
 
-			localStorage: new Backbone.LocalStorage('searches')
+      localStorage: new Backbone.LocalStorage('searches')
 
-		});
+    });
 
-		return SearchList;
-	});
+    return SearchList;
+  });

@@ -1,26 +1,26 @@
 define(['jquery',
         'underscore',
-       	'backbone',
-	      'text!app/templates/search_bar.tp'
-	],
+        'backbone',
+        'text!app/templates/search_bar.tp'
+  ],
 
-	function( $, _, Backbone, searchBarTp) {
+  function( $, _, Backbone, searchBarTp) {
 
-		var SearchBar = Backbone.View.extend({
+    var SearchBar = Backbone.View.extend({
 
-			events: {
-				'submit .search_form': 'search'
-			},
+      events: {
+        'submit .search_form': 'search'
+      },
 
-			initialize: function() {
+      initialize: function() {
 
-				this.$el.html(_.template(searchBarTp, {}));
-			},
+        this.$el.html(_.template(searchBarTp, {}));
+      },
 
-			search: function(ev) {
+      search: function(ev) {
         ev.preventDefault();
-				var artistChecked = $('#artist').attr('checked'),
-				    query = $('#query').val();
+        var artistChecked = $('#artist').attr('checked'),
+            query = $('#query').val();
 
         if(query){
 
@@ -33,9 +33,9 @@ define(['jquery',
             //console.log('Invalid service');
           }
 
-			}
+      }
 
     });
 
-		return SearchBar;
-	});
+    return SearchBar;
+  });
