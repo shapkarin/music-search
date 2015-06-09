@@ -60,7 +60,10 @@ define(['jquery',
                   model: new Artist,
                   template: tagTp
           });
+
         },
+
+
 
         newSearch: function(ev, search) {
         
@@ -76,6 +79,8 @@ define(['jquery',
 
         performSearch: function(search) {
 
+          Backbone.history.navigate("search/"+search.service+'/'+search.query, true);
+
           var service = search && search.service,
               viewId = service + 'SearchResults',
               view = this[viewId];
@@ -87,5 +92,5 @@ define(['jquery',
 
       });
 
-      return App;
+    return App;
   });

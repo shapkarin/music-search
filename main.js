@@ -17,4 +17,5 @@ requirejs(['jquery',
     new App({
       el: $('#application')
     });
+
 });
