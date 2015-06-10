@@ -16,9 +16,10 @@ define(['jquery',
           dataType: 'jsonp',
           success: function(model, response) {
             var results = response.toptracks || [],
+                track = results.track,
                 instances = [];
-            if(results && results.track.length) {
-              for(var i=0;i<results.track.length;i++) {
+            if(results && track.length) {
+              for(var i=0;i<track.length;i++) {
                 var r = results.track[i];
                 instances.push( new Track(r) );
               }
