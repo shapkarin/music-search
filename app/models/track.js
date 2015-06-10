@@ -29,10 +29,6 @@ define(['jquery',
             error(arguments);
           }
         });
-      },
-      
-      youtube: function(params, success, error) {
-
       }
     });
 
