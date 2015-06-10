@@ -31,7 +31,6 @@ header a
       background-color darken(#f8f8f8, 10%)
 
 #search_results
-  perspective 1000
 
   .search_result
     opacity 0
@@ -45,6 +44,8 @@ header a
     margin-bottom 30px
     overflow hidden
     position relative
+    box-shadow 0 0 0 0 rgba(0,0,0,0.2)
+    transition box-shadow .4s linear
 
     @media screen and (max-width $screen-sm-min)
       animation-name fadeIn
@@ -53,8 +54,11 @@ header a
       .stat
         margin-top 7px
 
-    &:hover .rank
-      opacity 1
+    &:hover
+      box-shadow 0 0 6px 0 rgba(0,0,0,0.2)
+
+      .rank
+        opacity 1
 
     .rank
       position absolute
@@ -71,6 +75,7 @@ header a
 
     .album-cover
       position relative
+      
       > img
         max-width 100%
 
