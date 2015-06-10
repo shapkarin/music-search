@@ -34,7 +34,6 @@
                         Воспроизведено: <%= prettyNumber(r.get('playcount')) %><br>
                         Слушателей: <%= prettyNumber(r.get('listeners')) %>
                     </div>
-
                 </div>
             </div>
         </div>
