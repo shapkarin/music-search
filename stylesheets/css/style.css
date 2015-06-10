@@ -106,6 +106,9 @@
     opacity: 1;
   }
 }
+header a {
+  color: #333;
+}
 .history {
   margin-bottom: 20px;
 }
@@ -163,6 +166,12 @@
   margin-bottom: 30px;
   overflow: hidden;
   position: relative;
+  -webkit-box-shadow: 0 0 0 0 rgba(0,0,0,0.2);
+  box-shadow: 0 0 0 0 rgba(0,0,0,0.2);
+  -webkit-transition: box-shadow 0.4s linear;
+  -moz-transition: box-shadow 0.4s linear;
+  -o-transition: box-shadow 0.4s linear;
+  transition: box-shadow 0.4s linear;
 }
 @media screen and (max-width: 768px) {
   #search_results .search_result {
@@ -174,6 +183,10 @@
 }
 #search_results .search_result .info .stat {
   margin-top: 7px;
+}
+#search_results .search_result:hover {
+  -webkit-box-shadow: 0 0 6px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 0 6px 0 rgba(0,0,0,0.2);
 }
 #search_results .search_result:hover .rank {
   opacity: 1;
