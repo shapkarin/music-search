@@ -12,6 +12,10 @@
     "node": "0.10.35",
     "npm": "2.1.17"
   },
+  "dependencies": {
+    "connect-modrewrite": "^0.7.6",
+    "express": "3.3.5"
+  },
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-stylus": "^0.18.0",
