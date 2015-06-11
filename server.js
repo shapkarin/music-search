@@ -2,13 +2,13 @@ var express = require('express'),
   modRewrite = require('connect-modrewrite'),
   app = express(),
   port = 3000,
-  exclude = 'js,css,svg,jade,woff,ttf,svg,eot';
+  exclude = '!\.(js,css,svg,png,jpg,jade,woff,ttf,eot)'.replace(/,/g, '|');
 
 app.set('port', port);
 
 app.set('views', __dirname);
 
-app.use(modRewrite([ '!\.(' + exclude.replace(/,/g, '|') + ') /index.html [L]' ]));
+app.use(modRewrite([ exclude + ' /index.html [L]' ]));
 
 app.use(express.static(__dirname));
 
