@@ -18,7 +18,7 @@ define(['jquery',
   function( $, _, Backbone,
 
       SearchList,
-      Artist,
+      Track,
 
       SearchBar,
       History,
@@ -51,13 +51,13 @@ define(['jquery',
 
           this.artistSearchResults = new SearchResults({
             el: $('#search_results'),
-                  model: new Artist,
+                  model: new Track,
                   template: artistTp  
           });
 
           this.tagSearchResults = new SearchResults({
             el: $('#search_results'),
-                  model: new Artist,
+                  model: new Track,
                   template: tagTp
           });
 

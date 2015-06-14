@@ -34,6 +34,7 @@ define(['jquery',
       
       youtube: function(params, success, error) {
 
+        console.log('');
       }
     });
 
