@@ -17,6 +17,7 @@ define(['jquery',
           $.proxy(this.resultsLoaded, this),
           $.proxy(this.errorLoadingResults, this)
         );
+
       },
 
      /* video: function(ev) {
@@ -28,6 +29,8 @@ define(['jquery',
           results: results
         }))
       },
+
+
 
       errorLoadingResults: function(model, xhr, options) {
 
