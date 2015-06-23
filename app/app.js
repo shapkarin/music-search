@@ -52,7 +52,7 @@ define(['jquery',
           this.artistSearchResults = new SearchResults({
             el: $('#search_results'),
                   model: new Track,
-                  template: artistTp  
+                  template: artistTp
           });
 
           this.tagSearchResults = new SearchResults({
