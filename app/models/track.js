@@ -11,7 +11,7 @@ define(['jquery',
 
         var name =  encodeURIComponent(params.query);
         this.fetch({
-          url: 'http://ws.audioscrobbler.com/2.0/?method=' + params.service +'.gettoptracks&' + params.service + '=' +  name + '&api_key=0613f2c34cedeff7f3f81e3672f4237e&limit=32&autocorrect=1&format=json',
+          url: 'http://ws.audioscrobbler.com/2.0/?method=' + params.service +'.gettoptracks&' + params.service + '=' +  name + '&api_key=0613f2c34cedeff7f3f81e3672f4237e&limit=12&autocorrect=1&format=json',
           type: 'get',
           dataType: 'jsonp',
           success: function(model, response) {

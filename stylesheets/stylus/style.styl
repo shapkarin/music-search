@@ -120,3 +120,20 @@ header a
 
 .navbar-default .navbar-collapse, .navbar-default .navbar-form
     border: none;
+
+$scale = 1;
+$op = 1;
+$z-index = 10;
+$pos = 50px;
+
+for i in (1..5)
+  .layer3D-{i}
+    z-index $z-index
+    position absolute
+    opacity $op
+    transform translate3d(0, $pos, 0) perspective(900px) scale($scale)
+
+  $z-index = $z-index - 1
+  $op = $op - 0.4
+  $scale = $scale - 0.2
+  $pos = $pos - 80

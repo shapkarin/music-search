@@ -1,43 +1,50 @@
-<div class="row byArtist">
-    <!--todo: preload images & auto_prefix delay-->
-    <% for(var i=0; i<results.length; i++) {
-        var r = results[i], delay = i*50+'ms',
-            prettyNumber = function (x) {
-                return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-            }%>
+<%
+
+var delay, lists = _.chain(results).groupBy(function(element, index){
+    return Math.floor(index/4);
+}).toArray().value();
+var prettyNumber = function (x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}%>
+
+<%_.each(lists, function(group,n){%>
+    <div class="layer3D-<%=n+1%>"><div class="row">
+        <%_.each(group, function(card){
+            delay = card.get('@attr')['rank']*100+'ms';
+        %>
         <div class="col-md-3 col-sm-4">
             <div class='search_result clearfix'
                  style="animation-delay: <%=delay%>;
                          -webkit-animation-delay: <%=delay%>;
-                         -moz-animation-delay: <%=delay%>;">
-                <div class='info'>
-                    <a href="<%= r.get('url') %>">
-                        <%= r.get('name') %>
-                    </a>
-                    <div class='stat'>
-                        Воспроизведено: <%= prettyNumber(r.get('playcount')) %><br>
-                        Слушателей: <%= prettyNumber(r.get('listeners')) %>
-                    </div>
-                    <a calss="youtube" href="#<%=r.get('@attr')['rank']%>">Video Search</a>
-                </div>
+                         -moz-animation-delay: <%=delay%>;border-radius: 0">
+
                 <div class='album-cover'>
                     <span class="rank">
-                        <%= r.get('@attr')['rank'] %>
+                        <%= card.get('@attr')['rank'] %>
                     </span>
-                    <% if (r.get('downloadurl')) {%>
-                        <audio class="audio" controls preload="none">
-                            <source src="<%= r.get('downloadurl')%>" type="audio/mpeg">
-                            <a href="<%= r.get('downloadurl')%>">Скачать</a>.
-                        </audio>
+                    <% if (card.get('downloadurl')) {%>
+                    <audio class="audio" controls preload="none">
+                        <source src="<%= card.get('downloadurl')%>" type="audio/mpeg">
+                        <a href="<%= card.get('downloadurl')%>">Скачать</a>.
+                    </audio>
                     <% }%>
-                    <%if(r.get('image')){%>
-                        <img src="<%=  r.get('image')[3]['#text']  %>" />
+                    <%if(card.get('image')){%>
+                    <img src="<%=  card.get('image')[3]['#text']  %>" />
                     <%}else{%>
-                        <img src="stylesheets/img/no-img.png"/>
+                    <img src="stylesheets/img/no-img.png"/>
                     <%}%>
                 </div>
-
+                <div class='info'>
+                    <a href="<%= card.get('url') %>">
+                        <%= card.get('name') %>
+                    </a>
+                    <div class='stat'>
+                        Воспроизведено: <%= prettyNumber(card.get('playcount')) %><br>
+                        Слушателей: <%= prettyNumber(card.get('listeners')) %>
+                    </div>
+                </div>
             </div>
         </div>
-    <% } %>
-</div>
+        <%})%>
+    </div></div>
+<%})%>
