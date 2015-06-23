@@ -10,6 +10,16 @@
                  style="animation-delay: <%=delay%>;
                          -webkit-animation-delay: <%=delay%>;
                          -moz-animation-delay: <%=delay%>;">
+                <div class='info'>
+                    <a href="<%= r.get('url') %>">
+                        <%= r.get('name') %>
+                    </a>
+                    <div class='stat'>
+                        Воспроизведено: <%= prettyNumber(r.get('playcount')) %><br>
+                        Слушателей: <%= prettyNumber(r.get('listeners')) %>
+                    </div>
+                    <a calss="youtube" href="#<%=r.get('@attr')['rank']%>">Video Search</a>
+                </div>
                 <div class='album-cover'>
                     <span class="rank">
                         <%= r.get('@attr')['rank'] %>
@@ -26,16 +36,7 @@
                         <img src="stylesheets/img/no-img.png"/>
                     <%}%>
                 </div>
-                <div class='info'>
-                        <a href="<%= r.get('url') %>">
-                            <%= r.get('name') %>
-                        </a>
-                    <div class='stat'>
-                        Воспроизведено: <%= prettyNumber(r.get('playcount')) %><br>
-                        Слушателей: <%= prettyNumber(r.get('listeners')) %>
-                    </div>
-                    <a calss="youtube" href="#<%=r.get('@attr')['rank']%>">Video Search</a>
-                </div>
+
             </div>
         </div>
     <% } %>
