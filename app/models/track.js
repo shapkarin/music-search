@@ -17,12 +17,15 @@ define(['jquery',
           success: function(model, response) {
             var results = response.toptracks || [],
               track = results.track,
-              instances = [];
-            if(results && track.length) {
+              instances = [],
+              error = response.message;
+            if(results && track) {
               for(var i=0;i<track.length;i++) {
                 var r = results.track[i];
                 instances.push( new Track(r) );
               }
+            }else if(error){
+              alert(error);
             }
             success(instances);
           },
