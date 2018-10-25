@@ -15,28 +15,22 @@ define(['jquery',
           type: 'get',
           dataType: 'jsonp',
           success: function(model, response) {
-            var results = response.toptracks || [],
-              track = results.track,
-              instances = [],
-              error = response.message;
-            if(results && track) {
+            var results = response.toptracks || response.track || [],
+                track = results.track,
+                instances = [];
+            if(results && track.length) {
               for(var i=0;i<track.length;i++) {
                 var r = results.track[i];
+                // better is use backbone collection
                 instances.push( new Track(r) );
               }
-            }else if(error){
-              alert(error);
-            }
+           }
             success(instances);
           },
           error: function() {
             error(arguments);
           }
         });
-      },
-      
-      youtube: function(params, success, error) {
-
       }
     });
 
