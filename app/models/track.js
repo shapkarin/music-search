@@ -15,7 +15,7 @@ define(['jquery',
           type: 'get',
           dataType: 'jsonp',
           success: function(model, response) {
-            var results = response.toptracks || response.track || [],
+            var results = response.toptracks || response.tracks || [],
                 track = results.track,
                 instances = [];
             if(results && track.length) {
