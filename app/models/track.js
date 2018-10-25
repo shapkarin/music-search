@@ -27,7 +27,7 @@ define(['jquery',
             success(instances);
           },
           error: function() {
-            error(arguments);
+            console.log(arguments);
           }
         });
       }
