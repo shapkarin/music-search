@@ -21,6 +21,7 @@ define(['jquery',
             if(results && track.length) {
               for(var i=0;i<track.length;i++) {
                 var r = results.track[i];
+                // better is use backbone collection
                 instances.push( new Track(r) );
               }
            }
