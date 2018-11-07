@@ -13,9 +13,9 @@
     "npm": "2.1.17"
   },
   "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-contrib-stylus": "^0.18.0",
-    "grunt-contrib-watch": "^0.6.1"
+    "grunt": "^1.0.3",
+    "grunt-contrib-stylus": "^1.2.0",
+    "grunt-contrib-watch": "^1.1.0"
   },
   "bundleDependencies": [],
   "private": true

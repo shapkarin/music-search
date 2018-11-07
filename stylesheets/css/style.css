@@ -133,11 +133,6 @@ header a {
 .history > .search > .query:hover {
   background-color: #dfdfdf;
 }
-#search_results {
-  -webkit-perspective: 1000;
-  -moz-perspective: 1000;
-  perspective: 1000;
-}
 #search_results .search_result {
   opacity: 0;
   -webkit-animation-name: fadeZoomIn;
@@ -161,7 +156,6 @@ header a {
   -o-animation-duration: 300ms;
   animation-duration: 300ms;
   border: 1px solid #d3d3d3;
-  -webkit-border-radius: 5px;
   border-radius: 5px;
   margin-bottom: 30px;
   overflow: hidden;
@@ -263,4 +257,10 @@ header a {
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
   border: none;
+}
+.logo {
+  height: 35px;
+}
+.navbar-brand {
+  padding: 10px 15px;
 }
