@@ -3,6 +3,7 @@
 </h1>
 
 # Music Search
+TODO: [use collections](https://github.com/shapkarin/music-search/tree/refact) or just react.js 
 
 Fast way to search top track from last.fm by artist or tag
 
@@ -10,5 +11,4 @@ To look at browser jade version [visit "jade" branch](https://github.com/shapkar
 
 [music.shapkarin.me](http://music.shapkarin.me)
 
-TODO: [use collections](https://github.com/shapkarin/music-search/tree/refact) or just react.js 
 
