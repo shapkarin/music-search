@@ -2,8 +2,7 @@ define(['jquery',
         'underscore',
         'backbone',
 
-        'app/collections/search_list',
-
+        'app/collections/searches',
         'app/models/track',
 
         'app/views/search_bar',
@@ -51,41 +50,61 @@ define(['jquery',
 
           this.artistSearchResults = new SearchResults({
             el: $('#search_results'),
-                  model: new Artist,
-                  template: artistTp  
+            template: artistTp
           });
 
-          this.tagSearchResults = new SearchResults({
-            el: $('#search_results'),
-                  model: new Artist,
-                  template: tagTp
-          });
+          // this.tagSearchResults = new SearchResults({
+          //   el: $('#search_results'),
+          //   model: new Artist(),
+          //   template: tagTp
+          // });
 
         },
 
 
 
         newSearch: function(ev, search) {
-        
           this.history.addSearch(search);  
-
           this.performSearch(search);
         },
 
         historySearch: function(ev, search) {
-        
           this.performSearch(search);
         },
 
         performSearch: function(search) {
+          //var tracksColl = new Tracks();
+          //tracksColl.fetch({data: {method: 'artist.gettoptracks', artist: 'Beatles'}});
+         
+          // this.artistSearchResults.collection.fetch({
+          //   data: {
+          //     method: 'artist.gettoptracks',
+          //     artist: 'Beatles'
+          //   }
+          // });
 
-          var service = search && search.service,
-              viewId = service + 'SearchResults',
-              view = this[viewId];
+          this.artistSearchResults.collection.fetch({
+            data: {
+              method: 'artist.gettoptracks',
+              artist: 'Khruangbin'
+            }
+          });
+
+          // this.tagSearchResults.collection.fetch({
+          //   data: {
+          //     method: 'artist.gettoptracks',
+          //     tag: 'Rock'
+          //   }
+          // });
+
+
+          // var service = search && search.service,
+          //     viewId = service + 'SearchResults',
+          //     view = this[viewId];
             
-          if(view) {
-            view.search(search);
-          }
+          // if(view) {
+          //   view.search(search);
+          // }
         }
 
       });

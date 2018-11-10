@@ -8,27 +8,25 @@
                          -moz-animation-delay: <%=delay%>;">
                 <div class='album-cover'>
                     <span class="rank">
-                        <%= r.get('@attr')['rank'] %>
+                        <%= r['@attr'].rank %>
                     </span>
-                    <% if (r.get('downloadurl')) {%>
+                    <% if (r.downloadurl) {%>
                     <audio class="audio" controls preload="none">
-                        <source src="<%= r.get('downloadurl')%>" type="audio/mpeg">
-                        <a href="<%= r.get('downloadurl')%>">Скачать</a>.
+                        <source src="<%= r.downloadurl %>" type="audio/mpeg">
+                        <a href="<%= r.downloadurl %>">Скачать</a>.
                     </audio>
                     <% }%>
-                    <%if(r.get('image')){%>
-                    <img src="<%=  r.get('image')[3]['#text']  %>" />
+                    <%if(r.image){%>
+                        <img src="<%=  r.image[3]['#text']  %>" />
                     <%}else{%>
-                    <img src="stylesheets/img/no-img.png"/>
+                        <img src="stylesheets/img/no-img.png"/>
                     <%}%>
                 </div>
                 <div class='info'>
-                    <a href="<%= r.get('url') %>">
-                         <%= r.get('artist')['name']%>:<br>
-                         <%= r.get('name') %>
+                    <a href="<%= r.url %>">
+                         <%= r.artist.name%>:<br>
+                         <%= r.name %>
                     </a><br>
-                    <% if (r.get('downloadurl')) {%>
-                    <% }%>
                 </div>
             </div>
         </div>

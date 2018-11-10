@@ -12,27 +12,27 @@
                          -moz-animation-delay: <%=delay%>;">
                 <div class='album-cover'>
                     <span class="rank">
-                        <%= r.get('@attr')['rank'] %>
+                        <%= r['@attr'].rank %>
                     </span>
-                    <% if (r.get('downloadurl')) {%>
+                    <% if (r.downloadurl) {%>
                         <audio class="audio" controls preload="none">
                             <source src="<%= r.get('downloadurl')%>" type="audio/mpeg">
                             <a href="<%= r.get('downloadurl')%>">Скачать</a>.
                         </audio>
                     <% }%>
-                    <%if(r.get('image')){%>
-                        <img src="<%=  r.get('image')[3]['#text']  %>" />
+                    <%if(r.image){%>
+                        <img src="<%=  r.image[3]['#text']  %>" />
                     <%}else{%>
                         <img src="stylesheets/img/no-img.png"/>
                     <%}%>
                 </div>
                 <div class='info'>
-                        <a href="<%= r.get('url') %>">
-                            <%= r.get('name') %>
+                        <a href="<%= r.url %>">
+                            <%= r.name %>
                         </a>
                     <div class='stat'>
-                        Воспроизведено: <%= prettyNumber(r.get('playcount')) %><br>
-                        Слушателей: <%= prettyNumber(r.get('listeners')) %>
+                        Воспроизведено: <%= r.playcount %><br>
+                        Слушателей: <%= r.listeners %>
                     </div>
                 </div>
             </div>

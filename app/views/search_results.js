@@ -1,36 +1,43 @@
 define(['jquery',
         'underscore',
-        'backbone'
+        'backbone',
+        'app/collections/tracks'
   ],
 
-  function( $, _, Backbone) {
+  function( $, _, Backbone, Tracks) {
 
     var SearchResults = Backbone.View.extend({
 
-      events: {
-        'click .search_result': 'more'
+      initialize: function() {
+        _.bindAll(this);
+        this.collection.fetch({
+          data: {
+            method: 'artist.gettoptracks',
+            artist: 'Khruangbin'
+          }
+        });
+        this.collection.on('reset', this.render);
       },
 
-      search: function(search) {
-        this.options.model.search(
-          search,
-          $.proxy(this.resultsLoaded, this),
-          $.proxy(this.errorLoadingResults, this)
-        );
+      //el: $('#search_results'),
+      collection: new Tracks(),
+
+      events: {
+        'click .search_result': 'more'
       },
 
       more: function(ev) {
 
       },
 
-      resultsLoaded: function(results) {
+      render: function() {
+        console.log(this.collection);
         this.$el.html(_.template(this.options.template, {
-          results: results
+          results: this.collection.toJSON()
         }))
       },
 
       errorLoadingResults: function(model, xhr, options) {
-
         console.log('Error loading searches.');
       }
     });
